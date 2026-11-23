@@ -21,6 +21,5 @@ function createRedirectServer(port, targetPort = 3000) {
   return server;
 }
 
-// Redirect old ports 3001 and 8000 directly to standard port 3000
+// Redirect port 3001 directly to standard port 3000
 createRedirectServer(3001, 3000);
-createRedirectServer(8000, 3000);

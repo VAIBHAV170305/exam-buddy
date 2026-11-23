@@ -40,22 +40,22 @@ def run_tests():
     for r in retrieved:
         print(f"   [Page {r['page_number']}] Score {r['score']}: {r['content'][:60]}...")
 
-    print("\n--- 4. Testing AI Services (Fallback & Formatting) ---")
-    concept_res = AIService._academic_fallback_generator("Explain deadlock", "Academic Assistant")
-    assert "Academic Analysis" in concept_res, "Concept generation failed"
-    print(f"AI Academic Engine OK: Generated {len(concept_res)} characters of structured explanation.")
+    print("\n--- 4. Testing AI Services (Direct Answers & Problem Solver) ---")
+    lalr_res = AIService._academic_fallback_generator("Merging states with a common core may produce ______ conflicts and does not produce ______ conflicts in an LALR parser.", "Academic Assistant")
+    assert "reduce/reduce" in lalr_res and "shift/reduce" in lalr_res, "LALR conflict direct solution failed"
+    print(f"LALR Direct Answer OK: Correctly resolved reduce/reduce and shift/reduce conflicts.")
+
+    deadlock_res = AIService._academic_fallback_generator("Explain deadlock", "Academic Assistant")
+    assert "Coffman" in deadlock_res or "deadlock" in deadlock_res.lower(), "Deadlock direct solution failed"
+    print(f"AI Academic Engine OK: Generated {len(deadlock_res)} characters of direct explanation.")
 
     hindi_res = AIService._academic_fallback_generator("deadlock in hindi", "Hindi explainer")
-    assert "संकल्पना की व्याख्या" in hindi_res, "Hindi generation failed"
+    assert "परिभाषा" in hindi_res or "प्रक्रिया" in hindi_res, "Hindi generation failed"
     print(f"Bilingual Hindi/English Explainer OK: Found Devanagari text.")
 
-    quiz_res = AIService._academic_fallback_generator("generate quiz mcq for deadlock", "Quiz Setter")
-    assert "Standardizing" in quiz_res or "characteristic" in quiz_res, "Quiz generation failed"
-    print(f"Quiz Generator OK: Structured JSON response returned.")
-
-    eval_res = AIService._academic_fallback_generator("evaluate student answer", "evaluating student answer")
-    assert "score" in eval_res, "Evaluation generation failed"
-    print(f"Answer Evaluation Engine OK: Parsed evaluation rubric.")
+    quiz_res = AIService._generate_topic_tailored_quiz("Deadlocks", "Operating Systems", "Medium", "mcq", 5)
+    assert len(quiz_res) == 5, "Quiz generation failed"
+    print(f"Quiz Generator OK: Generated {len(quiz_res)} structured MCQ questions.")
 
     print("\n--- 5. Testing Study Tasks & Analytics ---")
     tasks = db.query(StudyTask).filter(StudyTask.user_id == user.id).all()

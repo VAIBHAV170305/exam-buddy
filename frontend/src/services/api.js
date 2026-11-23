@@ -5,7 +5,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api/v1';
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
-  timeout: 4000, // 4s timeout prevents indefinite loading hangs if backend is restarting
+  timeout: 25000, // 25s timeout allows AI analysis, RAG indexing, and large document processing
   headers: {
     'Content-Type': 'application/json',
   },
@@ -20,10 +20,16 @@ apiClient.interceptors.request.use((config) => {
   return config;
 }, (error) => Promise.reject(error));
 
-// Response interceptor for token expiry handling
+// Response interceptor for token expiry and connection error handling
 apiClient.interceptors.response.use(
   (response) => response,
   (error) => {
+    if (error.code === 'ECONNABORTED' || error.message?.includes('Network Error') || error.response?.status === 502) {
+      console.warn(
+        `[Exam Buddy Alert] Backend unreachable via ${API_BASE_URL}. ` +
+        `Make sure the FastAPI backend is running on http://127.0.0.1:8001 (run ./run_exam_buddy.ps1).`
+      );
+    }
     if (error.response && error.response.status === 401) {
       // Don't auto-redirect on login check failure
       if (!window.location.pathname.includes('/login') && !window.location.pathname.includes('/register')) {
