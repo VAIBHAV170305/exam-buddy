@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(() => {
     const saved = safeStorage.getItem('exam_buddy_token');
     if (!saved || saved === 'undefined' || saved === 'null') {
-      return DEFAULT_DEMO_TOKEN;
+      return null;
     }
     return saved;
   });
@@ -33,10 +33,10 @@ export const AuthProvider = ({ children }) => {
       try {
         return JSON.parse(savedUser);
       } catch (e) {
-        return DEFAULT_DEMO_STUDENT;
+        return null;
       }
     }
-    return DEFAULT_DEMO_STUDENT;
+    return null;
   });
 
   const [loading, setLoading] = useState(false);
@@ -54,17 +54,15 @@ export const AuthProvider = ({ children }) => {
         } catch (err) {
           console.warn("Backend server auth check:", err.message);
           if (err.response?.status === 401) {
-            safeStorage.setItem('exam_buddy_token', DEFAULT_DEMO_TOKEN);
-            safeStorage.setItem('exam_buddy_user', JSON.stringify(DEFAULT_DEMO_STUDENT));
-            setToken(DEFAULT_DEMO_TOKEN);
-            setUser(DEFAULT_DEMO_STUDENT);
+            safeStorage.removeItem('exam_buddy_token');
+            safeStorage.removeItem('exam_buddy_user');
+            setToken(null);
+            setUser(null);
           }
         }
       } else {
-        safeStorage.setItem('exam_buddy_token', DEFAULT_DEMO_TOKEN);
-        safeStorage.setItem('exam_buddy_user', JSON.stringify(DEFAULT_DEMO_STUDENT));
-        setToken(DEFAULT_DEMO_TOKEN);
-        setUser(DEFAULT_DEMO_STUDENT);
+        setToken(null);
+        setUser(null);
       }
       setLoading(false);
     };

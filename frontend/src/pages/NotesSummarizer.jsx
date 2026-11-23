@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { summarizerAPI, documentsAPI } from '../services/api';
 import {
   FileText,
-  Sparkles,
   ArrowRight,
   Copy,
   Check,

@@ -5,7 +5,7 @@ import {
   User,
   GraduationCap,
   BookOpen,
-  Sparkles,
+  Award,
   LogOut,
   ChevronDown,
   ChevronUp,
@@ -225,7 +225,7 @@ export default function StudentProfileMenu() {
                 <div>
                   <h3 className="font-bold text-base text-white leading-tight flex items-center gap-1.5">
                     <span>{user?.full_name || 'Aarav Sharma'}</span>
-                    <Sparkles className="w-3.5 h-3.5 text-amber-400" aria-hidden="true" />
+                    <Award className="w-3.5 h-3.5 text-amber-400" aria-hidden="true" />
                   </h3>
                   <p className="text-xs text-slate-300 font-mono mt-0.5">{user?.email || 'demo@exambuddy.ai'}</p>
                   <p className="text-[10px] text-brand-300 font-medium mt-1">Student ID: #{user?.id || 1} • Active Scholar</p>

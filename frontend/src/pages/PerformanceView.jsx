@@ -6,7 +6,7 @@ import {
   TrendingUp,
   FolderOpen,
   CalendarCheck2,
-  Sparkles,
+  Lightbulb,
   CheckCircle,
   AlertTriangle
 } from 'lucide-react';
@@ -131,7 +131,7 @@ export default function PerformanceAnalytics() {
         {/* AI Recommendations */}
         <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-4">
           <h3 className="font-bold text-slate-900 text-base flex items-center gap-2">
-            <Sparkles className="w-4 h-4 text-amber-500" />
+            <Lightbulb className="w-4 h-4 text-amber-600" />
             <span>Personalized AI Study Directives</span>
           </h3>
 

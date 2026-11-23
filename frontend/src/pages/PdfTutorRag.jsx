@@ -5,7 +5,6 @@ import {
   BookOpenCheck,
   Search,
   BookOpen,
-  Sparkles,
   FileText,
   Send,
   ArrowRight,

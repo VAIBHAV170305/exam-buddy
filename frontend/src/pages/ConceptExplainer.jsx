@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { explainerAPI } from '../services/api';
 import {
-  Sparkles,
+  Lightbulb,
   Languages,
   Layers,
   Volume2,
@@ -77,7 +77,7 @@ export default function ConceptExplainer() {
       {/* Header */}
       <div>
         <h1 className="text-2xl font-bold text-slate-900 flex items-center gap-2.5">
-          <Sparkles className="w-6 h-6 text-amber-500" />
+          <Lightbulb className="w-6 h-6 text-amber-600" />
           <span>AI Concept Explainer</span>
         </h1>
         <p className="text-xs text-slate-500 mt-1">

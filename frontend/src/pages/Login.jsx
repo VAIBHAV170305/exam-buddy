@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { GraduationCap, Mail, Lock, ArrowRight, AlertCircle, Sparkles } from 'lucide-react';
+import { GraduationCap, Mail, Lock, ArrowRight, AlertCircle, Zap } from 'lucide-react';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -70,7 +70,7 @@ export default function Login() {
             aria-label="Instant Demo Sign In with sample student Aarav Sharma"
             className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-blue-50 hover:bg-blue-100 text-brand-700 border border-blue-200 font-bold text-xs sm:text-sm shadow-sm transition-colors focus-visible:ring-2 focus-visible:ring-brand-500 focus:outline-none"
           >
-            <Sparkles className="w-4 h-4 text-amber-500" aria-hidden="true" />
+            <Zap className="w-4 h-4 text-amber-500" aria-hidden="true" />
             <span>Instant Demo Sign In (Aarav Sharma)</span>
           </button>
 

@@ -6,7 +6,6 @@ import {
   CheckCircle,
   AlertCircle,
   ArrowRight,
-  Sparkles,
   TrendingUp,
   Tag,
   Target
@@ -166,7 +165,7 @@ export default function AnswerEvaluator() {
           {/* Feedback Body */}
           <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-xs text-slate-800 leading-relaxed">
             <h4 className="font-bold text-slate-900 mb-1 flex items-center gap-1.5">
-              <Sparkles className="w-4 h-4 text-amber-500" />
+              <Award className="w-4 h-4 text-brand-600" />
               <span>Examiner Feedback</span>
             </h4>
             <p>{result.feedback}</p>

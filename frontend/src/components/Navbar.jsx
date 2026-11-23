@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAuth } from '../context/AuthContext';
-import { BookOpen, Sparkles } from 'lucide-react';
+import { BookOpen, Target } from 'lucide-react';
 import StudentProfileMenu from './StudentProfileMenu';
 
 export default function Navbar() {
@@ -18,17 +18,9 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-2 bg-indigo-50 border border-indigo-100 text-indigo-700 px-3 py-1.5 rounded-lg text-xs font-medium">
-          <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
+          <Target className="w-3.5 h-3.5 text-indigo-600" />
           <span>Target: <strong className="font-semibold">{user?.target_exam || 'Finals'}</strong></span>
         </div>
-
-        <a
-          href="/landing"
-          className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-semibold text-slate-600 hover:text-brand-600 hover:border-brand-300 transition-colors"
-        >
-          <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-          <span>Landing Page</span>
-        </a>
       </div>
 
       {/* Entire Student Profile Hub */}

@@ -4,7 +4,7 @@ import {
   LayoutDashboard,
   FolderOpen,
   Bot,
-  Sparkles,
+  Lightbulb,
   FileText,
   HelpCircle,
   FileCheck2,
@@ -20,7 +20,7 @@ const navItems = [
   { name: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
   { name: 'Smart Notes Hub', path: '/notes', icon: FolderOpen },
   { name: 'Academic Assistant', path: '/assistant', icon: Bot },
-  { name: 'Concept Explainer', path: '/explainer', icon: Sparkles },
+  { name: 'Concept Explainer', path: '/explainer', icon: Lightbulb },
   { name: 'Notes Summarizer', path: '/summarizer', icon: FileText },
   { name: 'Exam Question Gen', path: '/questions', icon: HelpCircle },
   { name: 'Answer Evaluator', path: '/evaluator', icon: FileCheck2 },
@@ -28,7 +28,6 @@ const navItems = [
   { name: 'Study Planner', path: '/planner', icon: CalendarCheck2 },
   { name: 'Performance Analytics', path: '/performance', icon: BarChart3 },
   { name: 'Student Profile', path: '/profile', icon: User },
-  { name: 'Public Landing Page', path: '/landing', icon: Sparkles },
 ];
 
 export default function Sidebar() {

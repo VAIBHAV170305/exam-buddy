@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import {
   GraduationCap,
-  Sparkles,
+  Lightbulb,
   BookOpenCheck,
   Bot,
   FolderOpen,
@@ -51,7 +51,7 @@ export default function LandingPage() {
       path: '/assistant',
     },
     {
-      icon: Sparkles,
+      icon: Lightbulb,
       title: 'Concept Explainer (Bilingual)',
       desc: 'Master challenging theoretical theorems through intuitive analogies, adjustable technical depth, and complete bilingual explanations in English and Hindi.',
       badge: 'Analogies & Hindi',
@@ -213,10 +213,10 @@ export default function LandingPage() {
                   Log In
                 </Link>
                 <Link
-                  to="/dashboard"
+                  to="/login"
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold shadow-sm transition-colors"
                 >
-                  <span>Launch Workspace</span>
+                  <span>Get Started</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </>
@@ -249,16 +249,16 @@ export default function LandingPage() {
           {/* CTAs */}
           <div className="pt-2 flex flex-wrap items-center justify-center gap-3.5">
             <Link
-              to="/dashboard"
+              to={isAuthenticated ? "/dashboard" : "/login"}
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-sm transition-colors"
             >
               <GraduationCap className="w-4 h-4" />
-              <span>Launch Student Workspace</span>
+              <span>{isAuthenticated ? 'Go to Student Workspace' : 'Get Started Free'}</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
 
             <Link
-              to="/pdf-tutor"
+              to={isAuthenticated ? "/pdf-tutor" : "/login"}
               className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white hover:bg-slate-100 text-slate-800 font-bold text-sm border border-slate-300 shadow-sm transition-colors"
             >
               <BookOpenCheck className="w-4 h-4 text-brand-600" />
@@ -266,7 +266,7 @@ export default function LandingPage() {
             </Link>
 
             <Link
-              to="/assistant"
+              to={isAuthenticated ? "/assistant" : "/login"}
               className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-slate-200/80 hover:bg-slate-200 text-slate-800 font-bold text-sm transition-colors"
             >
               <Bot className="w-4 h-4 text-slate-700" />
@@ -619,11 +619,11 @@ export default function LandingPage() {
 
             <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
               <Link
-                to="/dashboard"
+                to={isAuthenticated ? "/dashboard" : "/login"}
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-500 font-bold text-sm text-white shadow-sm transition-colors"
               >
                 <GraduationCap className="w-4 h-4" />
-                <span>Enter Student Workspace</span>
+                <span>{isAuthenticated ? 'Enter Student Workspace' : 'Sign In & Get Started Free'}</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>

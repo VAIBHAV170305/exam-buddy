@@ -6,7 +6,8 @@ import Footer from '../components/Footer';
 import {
   FolderOpen,
   Bot,
-  Sparkles,
+  Lightbulb,
+  Brain,
   FileText,
   HelpCircle,
   BookOpenCheck,
@@ -58,7 +59,7 @@ export default function Dashboard() {
       <div className="rounded-2xl bg-slate-900 border border-slate-800 p-8 text-white shadow-sm">
         <div className="max-w-2xl space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-brand-300 text-xs font-semibold uppercase tracking-wider">
-            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+            <Brain className="w-3.5 h-3.5 text-brand-400" />
             <span>AI-Powered Learning Workspace</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
@@ -201,7 +202,7 @@ export default function Dashboard() {
           >
             <div className="space-y-3">
               <div className="w-11 h-11 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition-colors">
-                <Sparkles className="w-5 h-5" />
+                <Lightbulb className="w-5 h-5" />
               </div>
               <h3 className="font-bold text-slate-900 text-base group-hover:text-amber-600 transition-colors">
                 AI Concept Explainer
@@ -329,7 +330,7 @@ export default function Dashboard() {
         <div className="bg-gradient-to-br from-indigo-900 to-slate-900 text-white p-6 rounded-2xl shadow-sm space-y-4 flex flex-col justify-between">
           <div className="space-y-3">
             <div className="flex items-center gap-2 text-indigo-300 text-xs font-bold uppercase tracking-wider">
-              <Sparkles className="w-4 h-4" />
+              <Lightbulb className="w-4 h-4 text-amber-400" />
               <span>Personalized Recommendations</span>
             </div>
             <h4 className="font-bold text-white text-base">Recommended Study Action</h4>

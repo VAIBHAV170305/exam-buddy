@@ -3,7 +3,6 @@ import { assistantAPI, documentsAPI } from '../services/api';
 import {
   Bot,
   Send,
-  Sparkles,
   BookOpen,
   Check,
   Copy,

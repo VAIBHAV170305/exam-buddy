@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { questionsAPI, documentsAPI } from '../services/api';
 import {
   HelpCircle,
-  Sparkles,
   CheckCircle2,
   XCircle,
   ArrowRight,
