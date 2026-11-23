@@ -38,14 +38,14 @@ export default function Sidebar() {
       aria-label="Main sidebar navigation"
     >
       {/* Brand Header */}
-      <div className="h-16 flex items-center px-5 gap-3 border-b border-slate-800 bg-slate-950/40">
-        <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white shadow-lg shadow-brand-500/20">
+      <div className="h-16 flex items-center px-5 gap-3 border-b border-slate-800 bg-slate-950">
+        <Link to="/dashboard" className="w-9 h-9 rounded-xl bg-brand-600 flex items-center justify-center text-white shadow-sm shrink-0">
           <GraduationCap className="w-5 h-5" aria-hidden="true" />
-        </div>
+        </Link>
         <div>
-          <span className="font-bold text-white text-lg tracking-tight flex items-center gap-1.5">
+          <Link to="/dashboard" className="font-bold text-white text-base tracking-tight flex items-center gap-1.5 hover:text-brand-300 transition-colors">
             EXAM BUDDY
-          </span>
+          </Link>
           <p className="text-[10px] text-slate-400 font-medium tracking-wide uppercase">AI Academic Companion</p>
         </div>
       </div>
@@ -88,12 +88,12 @@ export default function Sidebar() {
       </nav>
 
       {/* Engine Status Card */}
-      <div className="p-3 mx-3 my-2 rounded-xl bg-gradient-to-br from-slate-800 to-slate-800/40 border border-slate-700/60">
+      <div className="p-3 mx-3 my-2 rounded-xl bg-slate-800/90 border border-slate-700">
         <div className="flex items-center gap-2 mb-1">
-          <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse" aria-hidden="true"></span>
+          <span className="inline-block w-2 h-2 rounded-full bg-emerald-400" aria-hidden="true"></span>
           <span className="text-xs font-semibold text-slate-200">RAG Vector Engine Active</span>
         </div>
-        <p className="text-[11px] text-slate-400 leading-relaxed">
+        <p className="text-[11px] text-slate-400 leading-relaxed font-normal">
           Grounding answers with page citations from your uploaded materials.
         </p>
       </div>

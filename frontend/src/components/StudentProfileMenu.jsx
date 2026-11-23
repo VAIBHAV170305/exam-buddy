@@ -243,16 +243,16 @@ export default function StudentProfileMenu() {
             </div>
 
             {/* Quick Education Badge Bar */}
-            <div className="mt-4 pt-3 border-t border-white/10 flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white/10 backdrop-blur-md text-[11px] font-semibold text-brand-200">
-                <GraduationCap className="w-3 h-3 text-amber-300" />
+            <div className="mt-4 pt-3 border-t border-slate-700 flex flex-wrap items-center gap-2">
+              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-[11px] font-semibold text-brand-300">
+                <GraduationCap className="w-3 h-3 text-amber-400" />
                 <span>{user?.course || 'B.Tech CSE'}</span>
               </span>
-              <span className="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-white/10 backdrop-blur-md text-[11px] font-medium text-slate-200">
-                <BookOpen className="w-3 h-3 text-brand-300" />
+              <span className="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-slate-800 border border-slate-700 text-[11px] font-medium text-slate-300">
+                <BookOpen className="w-3 h-3 text-brand-400" />
                 <span>{user?.semester || 'Semester 5'}</span>
               </span>
-              <span className="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-[10px] font-semibold text-emerald-300">
+              <span className="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-emerald-950/80 border border-emerald-800 text-[10px] font-semibold text-emerald-300">
                 <Target className="w-3 h-3" />
                 <span>{user?.target_exam || 'Finals & GATE'}</span>
               </span>
@@ -396,7 +396,7 @@ export default function StudentProfileMenu() {
                   />
                 </div>
 
-                <div className="pt-2 sticky bottom-0 bg-white/95 backdrop-blur-sm pb-1 flex items-center gap-2 border-t border-slate-100">
+                <div className="pt-2 sticky bottom-0 bg-white pb-1 flex items-center gap-2 border-t border-slate-100">
                   <button
                     type="submit"
                     disabled={saving}
